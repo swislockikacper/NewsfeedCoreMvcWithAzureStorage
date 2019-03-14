@@ -1,0 +1,18 @@
+﻿@model NewsfeedCoreMVC.Models.NewsfeedEntryViewModel
+
+<div class="container">
+    @await Html.PartialAsync("_EntryForm", Model.Model)
+    @await Html.PartialAsync("_SearchEntries", Model.Model)
+
+    <section>
+        <div class="container">
+
+            <div class="row">
+                @foreach (var entry in Model.Entries)
+                {
+                    @await Html.PartialAsync("_EntryDisplay", entry)
+                }
+            </div>
+        </div>
+    </section>
+</div>

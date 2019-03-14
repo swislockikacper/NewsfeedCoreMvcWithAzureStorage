@@ -1,0 +1,21 @@
+﻿@model NewsfeedCoreMVC.Models.NewsfeedEntryModel
+
+<section class="text-center newsfeed-form">
+    <form method="post" enctype="multipart/form-data">
+        <label asp-for="Name"></label>
+        <br />
+        <input class="title-form" type="text" asp-for="Name" required />
+        <br />
+        <label asp-for="Title"></label>
+        <br />
+        <input class="title-form" type="text" asp-for="Title" required />
+        <br />
+        <label asp-for="Text"></label>
+        <br />
+        <textarea class="text-form" type="text" asp-for="Text"></textarea>
+        <br />
+        <input class="file-upload" type="file" asp-for="File" accept="image/*" />
+        <br/>
+        <button class="add-button btn" formaction="/Newsfeed/AddEntry">Add entry</button>
+    </form> 
+</section>

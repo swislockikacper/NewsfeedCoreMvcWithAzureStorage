@@ -1,0 +1,26 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@model NewsfeedCoreMVC.DTO.NewsfeedEntryDTO
+
+@{ 
+    var blobUrl = Configuration.GetSection("AzureStorage")["BlobUrl"];
+    var fileName = Model.FileName != null && Model.FileName != string.Empty ? Model.FileName : string.Empty;
+    var fileUrl = $"{blobUrl}/{fileName}";
+}
+
+<div class="col-sm-4">
+    <div class="card card-default">
+        @if (Model.FileName != null && Model.FileName != string.Empty)
+        {
+            <div class="card-img">
+                <img src="@fileUrl" class="img-responsive">
+            </div>
+        }
+        <div class="card-body">
+            <h5>@Model.Timestamp.ToString("yyyy-MM-dd HH:MM") @Model.Name</h5>
+            <h4>@Model.Title</h4>
+            <p>@Model.Text</p>
+        </div>
+    </div>
+</div>
