@@ -1,0 +1,25 @@
+﻿.newsfeed-form {
+    margin-top: 2rem;
+}
+
+.add-button {
+    margin: 1rem;
+}
+
+.text-form {
+    height: 10rem;
+    width: 25rem;
+}
+
+.title-form {
+    width: 25rem;
+}
+
+.search-btn {
+    margin: 1rem;
+}
+
+.file-upload {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
